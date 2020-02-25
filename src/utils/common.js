@@ -1,3 +1,3 @@
-export function formatDigits(num, percision) {
-  return parseFloat(num).toFixed(percision)
+export function formatDigits(num, precision) {
+  return parseFloat(num).toFixed(precision)
 }

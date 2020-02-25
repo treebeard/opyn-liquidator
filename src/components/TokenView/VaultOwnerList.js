@@ -49,7 +49,7 @@ class VaultOwnerList extends Component {
       <DataView
         heading={<h3> All Vaults </h3>}
         status={this.state.isLoading ? 'loading' : 'default'}
-        fields={['Owner', 'Collecteral', 'Issued', 'RATIO', 'Status']}
+        fields={['Owner', 'Collateral (ETH)', 'Issued (oToken)', 'RATIO', 'Status']}
         entries={this.state.vaults}
         entriesPerPage={6}
         renderEntry={({ owner, collateral, oTokensIssued, ratio, maxLiquidatable, isSafe }) => {
@@ -75,7 +75,7 @@ class VaultOwnerList extends Component {
                 }}
               >
                 <Tag color='#E34343' background='#FFC6C6'>
-                  Unsafe!
+                  Liquidate
                 </Tag>
               </LinkBase>
             ),

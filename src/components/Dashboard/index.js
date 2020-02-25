@@ -1,8 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom'
 import { supportedList } from '../../constants/addresses'
-
-import { Header, DataView, IdentityBadge, Button } from '@aragon/ui'
+import { DataView, Button, AddressField } from '@aragon/ui'
 
 function DashBoard() {
     const history = useHistory();
@@ -11,15 +10,15 @@ function DashBoard() {
     }
     return (
       <>
-        <Header primary='All Opyn Options' />
         <DataView
-        fields={['Contract', 'Detail']}
+        fields={['Name','Contract', '']}
         entries={supportedList}
         entriesPerPage={6}
-        renderEntry={( addr ) => {
+        renderEntry={( oToken ) => {
           return [
-            <IdentityBadge entity={addr} shorten={false} />,
-            <Button onClick={() => goToToken(addr)}> Manage </Button>
+            oToken.tokenName,
+            <AddressField address={oToken.addr} autofocus={false} />,
+            <Button onClick={() => goToToken(oToken.addr)}> Manage </Button>
           ];
         }}
         />

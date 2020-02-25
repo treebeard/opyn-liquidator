@@ -23,7 +23,7 @@ class ConnectButton extends Component {
     return this.state.isConnected ? (
       <IdentityBadge entity={this.state.account} connectedAccount />
     ) : (
-      <Button onClick={this.connectWeb3}> Connect </Button>
+      <Button onClick={this.connectWeb3}> Connect Wallet </Button>
     );
   }
 }
