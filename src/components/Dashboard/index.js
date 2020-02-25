@@ -11,14 +11,14 @@ function DashBoard() {
     return (
       <>
         <DataView
-        fields={['Name','Contract', '']}
+        fields={[ 'Name', 'Contract', 'Detail']}
         entries={supportedList}
         entriesPerPage={6}
-        renderEntry={( oToken ) => {
+        renderEntry={( {addr, name} ) => {
           return [
-            oToken.tokenName,
-            <AddressField address={oToken.addr} autofocus={false} />,
-            <Button onClick={() => goToToken(oToken.addr)}> Manage </Button>
+            <>{name}</>,
+            <AddressField address={addr} autofocus={false} />,
+            <Button onClick={() => goToToken(addr)}> Manage </Button>
           ];
         }}
         />
